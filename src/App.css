@@ -19,10 +19,10 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* Background name text (page ke top me) */
+/* 🔹 Background name text (watermark style) */
 .bg-text {
   position: fixed;
-  top: 8%;                /* 👈 page top pe set */
+  top: 8%;
   left: 50%;
   transform: translateX(-50%);
   font-size: 3rem;
@@ -31,12 +31,13 @@ body {
   background: linear-gradient(90deg, #ff512f, #dd2476, #24c6dc, #51489b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  opacity: 0.1;           /* halki transparency jaise watermark */
+  opacity: 0.08;            /* aur soft watermark effect */
   white-space: nowrap;
-  z-index: 0;
+  z-index: 0;               /* container ke niche rahe */
   pointer-events: none;
 }
 
+/* 🔹 Main container */
 .container {
   text-align: center;
   background: rgb(2, 2, 65);
@@ -47,9 +48,11 @@ body {
   flex-direction: column;
   align-items: center;
   width: 320px;
-  z-index: 1;  /* background text ke upar dikhe */
+  z-index: 1;              /* bg-text ke upar rahe */
+  position: relative;
 }
 
+/* Header (Counter App) */
 .header {
   font-size: 2.5rem;
   margin-bottom: 10px;
@@ -59,17 +62,20 @@ body {
   width: 100%;
 }
 
+/* Counter value */
 h2 {
   font-size: 6rem;
   color: rgb(223, 248, 33);
   margin: 20px 0;
 }
 
+/* Buttons wrapper */
 .btn-group {
   display: flex;
   gap: 10px;
 }
 
+/* Buttons */
 button {
   padding: 20px 30px;
   font-size: 28px;
@@ -88,7 +94,7 @@ button:active {
   transform: scale(0.95);
 }
 
-/* Individual button colors */
-button:nth-child(1) { background-color: rgb(51, 208, 51); }
-button:nth-child(2) { background-color: rgb(238, 68, 68); }
-button:nth-child(3) { background-color: rgb(8, 174, 230); }
+/* 🔹 Individual button colors */
+button:nth-child(1) { background-color: rgb(51, 208, 51); } /* Plus */
+button:nth-child(2) { background-color: rgb(238, 68, 68); } /* Minus */
+button:nth-child(3) { background-color: rgb(8, 174, 230); } /* Reset */
